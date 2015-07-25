@@ -12,17 +12,19 @@
     <link rel="shortcut icon" href="${assetPath(src: 'favicon.ico')}" type="image/x-icon">
     <link rel="apple-touch-icon" href="${assetPath(src: 'apple-touch-icon.png')}">
     <link rel="apple-touch-icon" sizes="114x114" href="${assetPath(src: 'apple-touch-icon-retina.png')}">
-    <g:if test="${cssPath}">
-        <asset:stylesheet src="css/pages/${cssPath}"/>
-    </g:if>
+    %{--<g:if test="${cssPath}">--}%
+        %{--<asset:stylesheet src="css/${cssPath}"/>--}%
+    %{--</g:if>--}%
+    <asset:stylesheet src="css/app.css"/>
     <g:layoutHead/>
 </head>
 
 <body>
-<div ng-app>
+%{--<div ng-app>--}%
     <g:layoutBody/>
-</div>
+%{--</div>--}%
 
 <asset:javascript src="app.js"/>
+<asset:deferredScripts/>
 </body>
 </html>
